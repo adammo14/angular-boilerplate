@@ -1,0 +1,14 @@
+<mat-toolbar class="top-nav" color="primary">
+    <a mat-icon-button class="icon me-3" aria-label="Example icon-button with menu icon" (click)="toggleDrawer()">
+        <mat-icon *ngIf="!sideMenuIcon">menu</mat-icon>
+        <mat-icon *ngIf="sideMenuIcon">close</mat-icon>
+    </a>
+    <span>My App</span>
+    <span class="example-spacer"></span>
+    <a mat-icon-button class="icon me-3" aria-label="Example icon-button with heart icon">
+        <mat-icon>favorite</mat-icon>
+    </a>
+    <a mat-icon-button class="icon" aria-label="Example icon-button with share icon">
+        <mat-icon>share</mat-icon>
+    </a>
+</mat-toolbar>
