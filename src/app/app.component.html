@@ -1,30 +1,5 @@
-<app-header (sidenav)="toggleSidebar()"></app-header>
+<app-header></app-header>
 
-<mat-drawer-container class="example-container" autosize>
-    <mat-drawer #drawer class="example-sidenav" mode="side" [opened]="isShowing">
-        <ul class="sidemenu">
-            <li class="menu-item">
-                <a [routerLink]="'home'" routerLinkActive="active">Home</a>
-                <span class="material-icons">chevron_right</span>
-            </li>
+<router-outlet></router-outlet>
 
-            <li class="menu-item">
-                <a [routerLink]="'registration'" routerLinkActive="active">Registration</a>
-                <span class="material-icons">chevron_right</span>
-            </li>
-
-            <li class="menu-item">
-                <a [routerLink]="'login'" routerLinkActive="active">Login</a>
-                <span class="material-icons">chevron_right</span>
-            </li>
-        </ul>
-    </mat-drawer>
-
-    <div class="main-content px-3 pt-3">
-        <div class="card p-3">
-            <router-outlet></router-outlet>
-        </div>
-        <app-footer></app-footer>
-    </div>
-    
-</mat-drawer-container>
+<app-footer></app-footer>

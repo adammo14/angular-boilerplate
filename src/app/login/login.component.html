@@ -1,4 +1,4 @@
-<form class="d-flex flex-row justify-content-center align-items-center example-form">
+<form class="d-flex flex-row justify-content-center align-items-center full-height">
     <mat-card-content class="d-flex flex-column">
         <mat-form-field class="example-full-width">
             <input matInput placeholder="Email">
@@ -7,6 +7,7 @@
         <mat-form-field class="example-full-width">
             <input matInput placeholder="Password">
         </mat-form-field>
+
+        <button mat-stroked-button color="accent" class="btn-block" (click)="login()">Login</button>
     </mat-card-content>
-    <button mat-stroked-button color="accent" class="btn-block">Login</button>
 </form>

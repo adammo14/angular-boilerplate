@@ -1,0 +1,5 @@
+@import './app-variables';
+
+.full-height {
+    height: calc(100vh - ($header-height + $footer-height));
+}

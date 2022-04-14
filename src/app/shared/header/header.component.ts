@@ -9,6 +9,7 @@ import { Config } from '../Config';
 export class HeaderComponent implements OnInit {
     public sideMenuIcon: boolean = Config.isNavbarOpenByDefault;
     @Output() sidenav: EventEmitter<any> = new EventEmitter();
+    public isLoggedIn: boolean = Config.isLoggedIn;
 
     constructor() { }
 

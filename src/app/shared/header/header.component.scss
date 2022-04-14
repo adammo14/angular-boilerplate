@@ -1,5 +1,7 @@
+@import './../../app-variables';
+
 .top-nav {
-    height: 60px;
+    height: $header-height;
 }
 
 .icon {
