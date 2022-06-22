@@ -1,23 +1,30 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { AuthService } from 'src/app/auth.service';
 import { Config } from '../Config';
+import { SharedService } from '../shared.service';
 
 @Component({
     selector: 'app-header',
     templateUrl: './header.component.html',
-    styleUrls: ['./header.component.scss']
+    styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-    public sideMenuIcon: boolean = Config.isNavbarOpenByDefault;
-    @Output() sidenav: EventEmitter<any> = new EventEmitter();
-    public isLoggedIn: boolean = Config.isLoggedIn;
+    public isLoggedIn: boolean;
+    public isSideNavOpen: boolean = Config.isNavbarOpenByDefault;
 
-    constructor() { }
+    constructor(
+        private auth: AuthService,
+        private sharedService: SharedService
+    ) {}
 
     ngOnInit(): void {
+        this.auth.isLoggedIn$.subscribe((val) => {
+            console.log('Login Status: ', val);
+            this.isLoggedIn = val;
+        });
     }
 
     toggleDrawer() {
-        this.sidenav.emit();
-        this.sideMenuIcon = !this.sideMenuIcon;
+        this.sharedService.toggleSideNav(true);
     }
 }

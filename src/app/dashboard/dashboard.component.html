@@ -1,0 +1,32 @@
+<mat-drawer-container class="example-container full-height" autosize>
+    <mat-drawer #drawer class="example-sidenav" mode="side" [opened]="true">
+        <ul class="sidemenu">
+            <a class="menu-item" [routerLink]="'/dashboard'">
+                <span routerLinkActive="active">Profile</span>
+                <span class="material-icons">chevron_right</span>
+            </a>
+
+            <a class="menu-item" [routerLink]="'/dahsboard/calendar'">
+                <span routerLinkActive="active">Calendar</span>
+                <span class="material-icons">chevron_right</span>
+            </a>
+
+            <a class="menu-item" [routerLink]="'/dahsboard/events'">
+                <span routerLinkActive="active">Events Signup</span>
+                <span class="material-icons">chevron_right</span>
+            </a>
+
+            <a class="menu-item" [routerLink]="'login'" (click)="logOut()">
+                <span>Log Out</span>
+                <span class="material-icons">chevron_right</span>
+            </a>
+        </ul>
+    </mat-drawer>
+
+    <div class="main-content px-3 pt-3">
+        <div class="card p-3">
+            <router-outlet></router-outlet>
+        </div>
+        <app-footer></app-footer>
+    </div>
+</mat-drawer-container>

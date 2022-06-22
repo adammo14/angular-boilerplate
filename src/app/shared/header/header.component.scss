@@ -1,23 +1,29 @@
-@import './../../app-variables';
+@import "./../../app-variables";
 
 .top-nav {
     height: $header-height;
-}
 
-.icon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-    color: white;
-}
+    .icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        color: white;
+    }
 
-.logo {
-    display: block;
-    height: 100%;
-    margin-left: 15px;
-}
+    .logo {
+        display: block;
+        height: 100%;
+        margin-left: 15px;
+    }
 
-.example-spacer {
-    flex: 1 1 auto;
+    .example-spacer {
+        flex: 1 1 auto;
+    }
+
+    .profile-img {
+        max-width: 35px;
+        max-height: 35px;
+        border-radius: 50%;
+    }
 }

@@ -1,20 +1,21 @@
 import { Component } from '@angular/core';
-import { MatSidenav } from '@angular/material/sidenav';
-import { Config } from './shared/Config';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
-    styleUrls: ['./app.component.scss']
+    styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-    title = 'routing-boilerplate';
-    public sidenav: MatSidenav;
-    public isShowing: boolean = Config.isNavbarOpenByDefault;
-    
-    constructor() {}
+    isDashboard: boolean;
 
-    toggleSidebar() {
-        this.isShowing = !this.isShowing;
+    constructor(private router: Router) {}
+
+    ngOnInit(): void {
+        console.log(this.router.url);
+        if (this.router.url === 'dashboard') {
+            console.log(this.router.url);
+            this.isDashboard = true;
+        }
     }
 }

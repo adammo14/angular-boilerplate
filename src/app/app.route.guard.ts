@@ -1,26 +1,27 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, Router } from '@angular/router';
+import { Observable, Subscription, tap } from 'rxjs';
+import { AuthService } from './auth.service';
 import { Config } from './shared/Config';
 
 @Injectable({
-    providedIn: 'root'
+    providedIn: 'root',
 })
-
 export class DefaultRootGuard implements CanActivate {
-    constructor(private router: Router){}
+    constructor(private router: Router, private auth: AuthService) {}
 
-    canActivate(): boolean {
-        let redirectUrl = '';
-
-        if(!Config.isLoggedIn) {
-            redirectUrl = 'login';
-        }
-
-        if(redirectUrl) {
-            this.router.navigate([redirectUrl]);
-            return false;
-        }
-
+    canActivate(): Observable<boolean> | boolean {
         return true;
+        // return this.auth.checkIfLoggedIn().pipe(
+        //     tap((r) => {
+        //         if (r === true) {
+        //             alert('yooo');
+        //             this.router.navigate(['/']);
+        //         } else {
+        //             alert('tgesghdfh');
+        //             this.router.navigate(['/login']);
+        //         }
+        //     })
+        // );
     }
 }

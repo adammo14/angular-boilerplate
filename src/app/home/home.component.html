@@ -1,22 +1,3 @@
-<mat-drawer-container class="example-container full-height" autosize>
-    <mat-drawer #drawer class="example-sidenav" mode="side" [opened]="isShowing">
-        <ul class="sidemenu">
-            <li class="menu-item">
-                <a [routerLink]="'/'" routerLinkActive="active">Home</a>
-                <span class="material-icons">chevron_right</span>
-            </li>
-
-            <li class="menu-item">
-                <a [routerLink]="'contact'" routerLinkActive="active">Contact</a>
-                <span class="material-icons">chevron_right</span>
-            </li>
-        </ul>
-    </mat-drawer>
-
-    <div class="main-content px-3 pt-3">
-        <div class="card p-3">
-            <router-outlet></router-outlet>
-        </div>
-        <app-footer></app-footer>
-    </div>
-</mat-drawer-container>
+<section class="hero-section">
+    <div class="overlay"></div>
+</section>
